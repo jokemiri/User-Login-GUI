@@ -1,0 +1,28 @@
+from tkinter import *
+from tkinter import messagebox
+from PIL import ImageTk, Image
+
+
+root=Tk()
+root.title("Login")
+root.geometry('925x500+300+200')
+root.configure(bg="#e4eeee")
+root.resizable(False,False)
+
+# Open Image
+Login_img = Image.open("Tractor.png")
+
+#Resize Image
+resized = Login_img.resize((400, 300), Image.ANTIALIAS)
+
+#Define Image (Original Size: 6000x4000)
+new_login_img=ImageTk.PhotoImage(resized)
+Login_label=Label(root,image=new_login_img).place(x=50,y=50)
+
+frame=Frame(root, width=350, height=350, bg="#e7ccce")
+frame.place(x=480, y=70)
+
+heading=Label(frame, text= "User Login", fg="#e4eeee", bg="#e7ccce", font=("Century Gothic", 24))
+heading.place(x=90, y=0)
+
+root.mainloop()
